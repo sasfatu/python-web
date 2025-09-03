@@ -1,39 +1,27 @@
 from flask import Flask, jsonify
-from datetime import datetime
-import requests
+import datetime
+import socket
+
 
 app = Flask(__name__)
 
-def check_database():
-  return False
 
-def check_external_service():
-    try:
-        response = requests.get('https://jsonplaceholder.typicode.com/posts')
-        return response.status_code == 200
-    except:
-        return False
-    
-@app.route('/api/v1/details')
-def get_details():
-    date_time = datetime.now().isoformat()
+@app.route('/api/v1/info')
+
+def info():
     return jsonify({
-        'name': 'Python App',
-        'version': '1.0.0',
-        'description': 'A simple Python web application',
-        'datetime': date_time
+    	'time': datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
+    	'hostname': socket.gethostname(),
+        'message': 'You are doing great, little human! <3',
+        'deployed_on': 'kubernetes'
     })
 
-@app.route('/health', methods=['GET'])
-def health_check():
-    db_status = check_database()
-    api_status = check_external_service()
+@app.route('/api/v1/healthz')
 
-    return jsonify({
-        'database': 'up' if db_status else 'down',
-        'external_api': 'up' if api_status else 'down'
-    })
+def health():
+	# Do an actual check here
+    return jsonify({'status': 'up'}), 200
 
-if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run( host='0.0.0.0', port=5050, debug=True )
+if __name__ == '__main__':
+
+    app.run(host="0.0.0.0", port=5050, debug=False)
