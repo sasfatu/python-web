@@ -33,7 +33,8 @@ jobs:
 
   cd:
     needs: ci
-    runs-on: self-hosted
+    runs-on:
+      labels: arc-runner-set
     steps:
 
       - uses: actions/checkout@v3
