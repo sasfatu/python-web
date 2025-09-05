@@ -49,6 +49,7 @@ jobs:
         run: |
           echo ${{needs.ci.outputs.commit_id}}
           pip install yq
+          export PATH="$HOME/.local/bin:$PATH"
           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app/values.yaml
 
       - name: Commit changes
