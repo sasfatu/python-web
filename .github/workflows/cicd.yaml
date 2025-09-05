@@ -9,7 +9,7 @@ on:
 
 jobs:
   ci:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
 
       - name: Shorten commit id
@@ -60,9 +60,9 @@ jobs:
       - name: Argocd app sync
         shell: bash
         run: |
-          argocd login argocd-server.argocd \
+          argocd login argocd.local \
             --insecure  \
             --grpc-web \
             --username admin \
-            --password  ${{ secrets.ARGOCD_PASSWORD }}
+            --password  ${{ secrets.ARGOCD_SECRET }}
           argocd app sync python-app

@@ -1,8 +1,8 @@
 replicaCount: 1
 image:
   repository: gileo/python-app
-  pullPolicy: IfNotPresent
   tag: v1
+  pullPolicy: IfNotPresent
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
