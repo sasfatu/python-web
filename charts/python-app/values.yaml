@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: gileo/python-app
-  tag: a1ac2a
+  tag: 84ff0f
   pullPolicy: IfNotPresent
 livenessProbe:
   httpGet:
