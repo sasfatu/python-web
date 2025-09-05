@@ -3,6 +3,18 @@ image:
   repository: gileo/python-app
   tag: a1ac2a
   pullPolicy: IfNotPresent
+livenessProbe:
+  httpGet:
+    path: /api/v1/healthz
+    port: 5050
+  initialDelaySeconds: 30
+  periodSeconds: 10
+readinessProbe:
+  httpGet:
+    path: /api/v1/healthz
+    port: 5050
+  initialDelaySeconds: 5
+  periodSeconds: 10
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
