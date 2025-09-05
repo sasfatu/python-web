@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: gileo/python-app
-  tag: v1
+  tag: 2f7d98
   pullPolicy: IfNotPresent
 imagePullSecrets: []
 nameOverride: ""
@@ -32,14 +32,6 @@ resources:
   requests:
     cpu: 50m
     memory: 50M
-# livenessProbe:
-#   httpGet:
-#     path: /
-#     port: http
-# readinessProbe:
-#   httpGet:
-#     path: /
-#     port: http
 autoscaling:
   enabled: false
   minReplicas: 1
