@@ -5,7 +5,7 @@ metadata:
   description: An example of a Backstage application.
   annotations:
     github.com/project-slug: safatu/python-web
-  #   backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development
