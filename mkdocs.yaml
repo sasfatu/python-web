@@ -1,6 +1,6 @@
 site_name: 'python-app'
 site_description: 'Main documentation for python-app features and framework APIs'
-repo_url: https://github.com/sasfatu/python-app
+repo_url: https://github.com/sasfatu/python-web
 edit_uri: edit/main/docs
 
 plugins:
