@@ -6,7 +6,7 @@ edit_uri: edit/main/docs
 plugins:
   - techdocs-core
   - search
-  - mermaid2
+#  - mermaid2
 
 # For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
 nav:
