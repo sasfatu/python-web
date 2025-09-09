@@ -7,7 +7,6 @@ plugins:
   - techdocs-core
   - search
   - mermaid2
-  - mkdocs-mkdocs-math
 
 # For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
 nav:
@@ -26,9 +25,6 @@ markdown_extensions:
   - md_in_html
   - admonition
   - codehilite
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: mermaid2.fence_mermaid
+  - pymdownx.superfences
+  - mdx_math
 
