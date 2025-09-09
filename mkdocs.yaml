@@ -26,5 +26,6 @@ markdown_extensions:
   - admonition
   - codehilite
   - pymdownx.superfences
-  - mdx_math
+  - pymdownx.arithmatex:
+      generic: true
 
